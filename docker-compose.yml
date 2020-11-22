@@ -2,7 +2,10 @@ version: '3'
 
 services:
   sonarqube:
-    mem_limit: 2g
+    deploy:
+      resources:
+        limits:
+          memory: 2g
     restart: unless-stopped
     image: sonarqube:8-community
     depends_on:
@@ -19,7 +22,10 @@ services:
     ports:
       - '9000:9000'
   db:
-    mem_limit: 512m
+    deploy:
+      resources:
+        limits:
+          memory: 512m
     restart: unless-stopped
     image: postgres:12
     environment:
