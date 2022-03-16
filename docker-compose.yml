@@ -2,6 +2,7 @@ version: '3'
 
 services:
   sonarqube:
+    container_name: sonarqube_test
     deploy:
       resources:
         limits:
@@ -22,6 +23,7 @@ services:
     ports:
       - '9000:9000'
   db:
+    container_name: sq_postgres_test
     deploy:
       resources:
         limits:
